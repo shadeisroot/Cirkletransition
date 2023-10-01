@@ -20,24 +20,27 @@ public class main extends Application {
         Group root = new Group();
         Scene scene = new Scene(root, 320, 240);
 
+        //the circle object
+
         Circle circle = new Circle(50,50,50);
         circle.setFill(Color.BLACK);
-        root.getChildren().add(circle);
 
+
+        //fade
         FadeTransition ft = new FadeTransition(Duration.millis(3000), circle);
         ft.setFromValue(0.0);
         ft.setToValue(1.0);
         ft.setCycleCount(4);
         ft.setAutoReverse(true);
-
         ft.play();
+
+        root.getChildren().add(circle);
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
-    }
-
+    }// End of Start
 
     public static void main(String[] args) {
         launch();
     }
-}
+}// End of Class
